@@ -3,11 +3,33 @@
 
 import requests
 import json
+import variables
 
-#variables
-url = 'https://api.ciscospark.com/v1/rooms'
-payload = {'title': 'TEST ROOM'}
-headers = {'content-type': 'application/json', 'authorization':'Bearer NTJiMTQyZjUtZTZlZC00N2I1LThjNTgtYWNmMjgyMDJhZmMyYzExYzY3YjQtNTdl'}
 
-#API POST to create Spark Room
-r = requests.post(url, data=json.dumps(payload), headers=headers)
+### Create the Room ###
+def createRoom():
+
+    url = 'https://api.ciscospark.com/v1/rooms'
+    payload = {
+        'title': 'TEST ROOM2'
+    }
+    headers = {'content-type': 'application/json', 'authorization':'Bearer ' + variables.token}
+
+    r = requests.post(url, data=json.dumps(payload), headers=headers)
+
+def getRoomID():
+
+    global roomID
+
+    url = 'https://api.ciscospark.com/v1/rooms/'
+    headers = {'content-type': 'application/json', 'authorization':'Bearer ' + variables.token}
+
+    r = requests.get(url, headers=headers)
+
+    print r.text
+    roomID = r.text[17:93]
+
+    return roomID
+
+
+getRoomID()
