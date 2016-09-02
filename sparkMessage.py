@@ -6,6 +6,8 @@ import json
 import variables
 import sparkRoom
 
+
+### Adds message to spark room ###
 def addMessage():
     url = 'https://api.ciscospark.com/v1/messages'
     payload = {

@@ -3,11 +3,18 @@
 
 import requests
 import json
+import variables
+import sparkRoom
 
-#variables
-url = 'https://api.ciscospark.com/v1/memberships'
-payload = {	"roomId": "Y2lzY29zcGFyazovL3VzL1JPT00vMTNmY2VmNjAtNmM5MS0xMWU2LTkyZWUtZjFkNjY3OTc1NjFl", "personEmail": "badams2@cisco.com", "isModerator": "false"}
-headers = {'content-type': 'application/json', 'authorization':'Bearer NTJiMTQyZjUtZTZlZC00N2I1LThjNTgtYWNmMjgyMDJhZmMyYzExYzY3YjQtNTdl'}
+### adds floor manager to Spark Room ###
+def addMember():
+    url = 'https://api.ciscospark.com/v1/memberships'
+    payload = {
+        "roomId": sparkRoom.roomID,
+        "personEmail": variables.email,
+        "isModerator": "false"
+    }
+    headers = {'content-type': 'application/json', 'authorization':'Bearer ' + variables.token}
 
-#API POST to create Spark Room
-r = requests.post(url, data=json.dumps(payload), headers=headers)
+    r = requests.post(url, data=json.dumps(payload), headers=headers)
+
