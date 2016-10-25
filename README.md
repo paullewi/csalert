@@ -51,8 +51,7 @@ This repo includes the following resources:
 ##  Application Flow
 __________________________________________________________________________________________________
 
-![Screen Shot 2016-10-25 at 11.25.52 AM.png]({{site.baseurl}}/Screen Shot 2016-10-25 at 11.25.52 AM.png)
-
+![app flow](https://github.com/paullewi/csalert/blob/master/Screen%20Shot%202016-10-25%20at%2011.25.52%20AM.png)
 
 
 
@@ -93,16 +92,16 @@ ________________________________________________________________________________
 6) Enter Floor Capacity: (0 - 9999999)
 
 
-![Screen Shot 2016-10-25 at 11.51.31 AM.png]({{site.baseurl}}/Screen Shot 2016-10-25 at 11.51.31 AM.png)
+![variables](https://github.com/paullewi/csalert/blob/master/Screen%20Shot%202016-10-25%20at%2011.51.31%20AM.png)
 
 7) Hit Enter and the application will now continuously make API queries to the MSE for the device count. The MSE will return the following format to the application:
 
-![Screen Shot 2016-10-25 at 11.56.03 AM.png]({{site.baseurl}}/Screen Shot 2016-10-25 at 11.56.03 AM.png)
+![request](https://github.com/paullewi/csalert/blob/master/Screen%20Shot%202016-10-25%20at%2011.56.03%20AM.png)
 
 8) When the device count reaches the limit, a spark room will be created and the contact will be added to the room. An alert will be sent. 
 
-![Screen Shot 2016-10-25 at 11.56.59 AM.png]({{site.baseurl}}/Screen Shot 2016-10-25 at 11.56.59 AM.png)
- 
+![spark output](https://github.com/paullewi/csalert/blob/master/Screen%20Shot%202016-10-25%20at%2011.56.59%20AM.png)
+
 9) Ctrl+C to end the application (runs in background every five minutes by default). 
 
 ## Custimization
